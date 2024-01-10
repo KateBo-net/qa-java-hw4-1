@@ -1,9 +1,11 @@
 import org.example.BonusService;
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class BonusServiceTest {
 
-    @org.junit.jupiter.api.Test
+    @Test
     void shouldCalculateForRegisteredAndUnderLimit() {
         BonusService service = new BonusService();
 
@@ -19,7 +21,7 @@ public class BonusServiceTest {
         assertEquals(expected, actual);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void shouldCalculateForRegisteredAndOverLimit() {
         BonusService service = new BonusService();
 
@@ -35,7 +37,7 @@ public class BonusServiceTest {
         assertEquals(expected, actual);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void shouldCalculateForUnregisteredAndUnderLimit() {
         BonusService service = new BonusService();
 
@@ -48,7 +50,7 @@ public class BonusServiceTest {
         assertEquals(expected, actual);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void shouldCalculateForUnregisteredAndOverLimit() {
         BonusService service = new BonusService();
 
@@ -61,8 +63,8 @@ public class BonusServiceTest {
         assertEquals(expected, actual);
     }
 
-    @org.junit.jupiter.api.Test
-    void shouldCalculateForRegisteredAndCancellationOfPurchase() {
+    @Test
+    void shouldCalculateCancellationOfPurchaseForRegistered() {
         BonusService service = new BonusService();
 
         long amount = -10000;
@@ -74,8 +76,8 @@ public class BonusServiceTest {
         assertEquals(expected, actual);
     }
 
-    @org.junit.jupiter.api.Test
-    void shouldCalculateForUnregisteredAndCancellationOfPurchase() {
+    @Test
+    void shouldCalculateCancellationOfPurchaseForUnregistered() {
         BonusService service = new BonusService();
 
         long amount = -3000;
